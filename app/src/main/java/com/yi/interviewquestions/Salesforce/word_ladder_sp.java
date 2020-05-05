@@ -26,6 +26,7 @@ public class word_ladder_sp {
     }
     int max = 0;
     String result = "";
+
     public String bfs(String sw){
         Stack<String> s = new Stack<>();
 
