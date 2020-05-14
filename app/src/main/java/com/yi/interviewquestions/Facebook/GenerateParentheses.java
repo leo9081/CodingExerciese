@@ -7,7 +7,7 @@ public class GenerateParentheses {
     public List<String> generateParenthesis(int n) {
         List<String> combinations = new ArrayList();
         StringBuilder temp = new StringBuilder();
-        backtrack(temp, combinations, n,0,0);
+        backtrack(temp, combinations, n);
         return combinations;
     }
 
@@ -16,7 +16,7 @@ public class GenerateParentheses {
     //result list each time add ( -> move to next
     //if list.size = 2 * length add result
 
-    public void backtrack(StringBuilder temp, List<String> result, int n,int open, int close){
+    public void backtrack(StringBuilder temp, List<String> result, int n){
         if(temp.length() == n*2){
             String t = temp.toString();
             if(is_val(t)){
@@ -26,12 +26,12 @@ public class GenerateParentheses {
         }
 
         temp.append('(');
-        backtrack(temp,result,n,open,close);
+        backtrack(temp,result,n);
         temp.deleteCharAt(temp.length() -1);
 
         temp.append(')');
 
-        backtrack(temp,result,n,open,close);
+        backtrack(temp,result,n);
 
         temp.deleteCharAt(temp.length() -1);
 
