@@ -1,4 +1,4 @@
-package com.yi.interviewquestions.Facebook;
+package com.yi.interviewquestions.Facebook.Tree;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -8,19 +8,6 @@ import java.util.Queue;
 
 
 public class BinaryTreeLOT {
-
-    private class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode() {}
-        TreeNode(int val) { this.val = val; }
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
@@ -35,8 +22,8 @@ public class BinaryTreeLOT {
             for(int i = 0 ; i < size; i++){
                 TreeNode temp = q.poll();
                 level.add(temp.val);
-                if(temp.left!=null) q.offer(temp.left);
-                if(temp.right!=null) q.offer(temp.right);
+                if(temp.leftNode!=null) q.offer(temp.leftNode);
+                if(temp.rightNode!=null) q.offer(temp.rightNode);
             }
 
             result.add(level);

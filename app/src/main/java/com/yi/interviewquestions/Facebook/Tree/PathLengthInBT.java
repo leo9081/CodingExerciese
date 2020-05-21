@@ -1,13 +1,4 @@
-package com.yi.interviewquestions.Facebook;
-
-class TreeNode{
-    int value;
-    TreeNode leftNode;
-    TreeNode rightNode;
-    public TreeNode(int value){
-        this.value = value;
-    }
-}
+package com.yi.interviewquestions.Facebook.Tree;
 
 public class PathLengthInBT {
 
@@ -26,7 +17,7 @@ public class PathLengthInBT {
 
     public int D2node(TreeNode root, TreeNode d){
         if(root == null) return 0;
-        if(root.value == d.value) return 1;
+        if(root.val == d.val) return 1;
 
         int left = D2node(root.leftNode, d);
         int right = D2node(root.rightNode,d);
@@ -38,7 +29,7 @@ public class PathLengthInBT {
 
 
     public TreeNode LCA(TreeNode root, TreeNode a, TreeNode b){
-        if(root== null || root.value == a.value || root.value == b.value){
+        if(root== null || root.val == a.val || root.val == b.val){
             return root;
         }
 
