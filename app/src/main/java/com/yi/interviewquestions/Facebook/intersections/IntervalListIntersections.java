@@ -1,6 +1,7 @@
-package com.yi.interviewquestions.Facebook;
+package com.yi.interviewquestions.Facebook.intersections;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class IntervalListIntersections {
