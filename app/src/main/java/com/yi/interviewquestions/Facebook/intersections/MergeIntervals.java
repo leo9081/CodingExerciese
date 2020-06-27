@@ -8,8 +8,6 @@ import java.util.List;
 public class MergeIntervals {
     public int[][] merge(int[][] intervals) {
         if(intervals.length == 1 ||intervals.length == 0) return intervals;
-        //if a[0] < b[0]: b[0]
-        //if a[1] > b[1]: b[1]
         List<int[]> r = new ArrayList<>();
 
         for(int[] i: intervals) r.add(i);
@@ -18,13 +16,10 @@ public class MergeIntervals {
 
         int i = 0 ; int j = i+1;
         while(j < r.size()){
-            int lo = Math.max(r.get(i)[0], r.get(j)[0]);
-            int hi = Math.min(r.get(i)[1], r.get(j)[1]);
-            if(lo <= hi){
-                lo = Math.min(r.get(i)[0], r.get(j)[0]);
-                hi = Math.max(r.get(i)[1], r.get(j)[1]);
-                r.get(i)[0] = lo;
-                r.get(i)[1] = hi;
+            if(r.get(j)[0] <= r.get(i)[1]){
+                if(r.get(i)[1] < r.get(j)[1]){
+                    r.get(i)[1] = r.get(j)[1];
+                }
                 r.remove(j);
             }else{
                 i++; j++;
